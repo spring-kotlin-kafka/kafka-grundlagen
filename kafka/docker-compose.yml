@@ -9,6 +9,15 @@ services:
       - "9190:9190"       # External Kafka Port (Host)
     environment:
       CLUSTER_ID: L4rE3vsnR1y1qu3AOgIDUg
+      KAFKA_NODE_ID: # id in the cluster
+      KAFKA_PROCESS_ROLES: # roles of the broker
+      KAFKA_CONTROLLER_QUORUM_VOTERS: # all voters comma separated with id@controller-inside-docker
+      KAFKA_LISTENERS: # all listener (broker,controller,external) with NAME://listener
+      KAFKA_ADVERTISED_LISTENERS: # all advertised listener (controller,external) with NAME://listener
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: # security map with NAME:SECURITY
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     restart: unless-stopped
 
   kafdrop:
