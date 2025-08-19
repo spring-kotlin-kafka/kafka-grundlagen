@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  kafka:
+    image: confluentinc/cp-kafka:7.5.1
+    hostname: kafka
+    container_name: ch-open-workshop_kafka
+    ports:
+      - "9190:9190"       # External Kafka Port (Host)
+    environment:
+      CLUSTER_ID: L4rE3vsnR1y1qu3AOgIDUg
+    restart: unless-stopped
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:4.1.0
+    container_name: ch-open-workshop_kafdrop
+    restart: unless-stopped
+    ports:
+      - "9192:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "kafka:29092"
+      JVM_OPTS: "-Xms32M -Xmx64M"
+    depends_on:
+      - kafka
+
+  kafka-init:
+    image: confluentinc/cp-kafka:7.5.1
+    depends_on:
+      - kafka
+    entrypoint: [ '/bin/sh', '-c' ]
+    command: |
+      "
+      echo -e 'Creating kafka topics'
+      # Create topics here
+
+      echo -e 'Successfully created the following topics:'
+      # List topics here
+      "
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.5.1
+    container_name: ch-open-workshop_schema-registry
+    ports:
+      - "9191:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:29092
+    restart: unless-stopped
+    depends_on:
+      - kafka
