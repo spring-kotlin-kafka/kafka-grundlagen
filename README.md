@@ -24,7 +24,7 @@ Als Entwickler möchte ich meine Topics initial erstellen lassen.
 
 -> Theorie-Teil Kafka-Producer
 
-## Story 2b: In Kafka Topic schreiben
+## Story 3: In Kafka Topic schreiben
 
 Als Entwickler möchte ich in mein Topic schreiben können.
 
@@ -34,7 +34,7 @@ Als Entwickler möchte ich in mein Topic schreiben können.
 
 -> Theorie-Teil Kafka-Consumer
 
-## Story 2c: Aus Kafka Topic lesen
+## Story 4: Aus Kafka Topic lesen
 
 Als Entwickler möchte ich aus meinem Topic lesen können.
 
@@ -45,7 +45,7 @@ Als Entwickler möchte ich aus meinem Topic lesen können.
 - [ ] mit `kafka-consumer-groups` aktuellen Offset einsehen
 - [ ] mit `kafka-consumer-groups` Offset zurücksetzen
 
-## Story 3: Kafka Web Anicht
+## Story 5: Kafka Web Anicht
 
 Als Entwickler möchte ich auch ohne Kommando-Zeile auf meinen Kafka-Cluster zugreifen können.
 
@@ -54,7 +54,7 @@ Als Entwickler möchte ich auch ohne Kommando-Zeile auf meinen Kafka-Cluster zug
 
 -> Theorie-Teil Spring Cloud Streams - Supplier
 
-## Story 4: Kafka Producer mit Spring Cloud Streams erstellen
+## Story 6: Kafka Producer mit Spring Cloud Streams erstellen
 
 Als Entwickler möchte ich mit einfachsten Mitteln in mein Kafka-Cluster schreiben können.
 
@@ -65,7 +65,7 @@ Als Entwickler möchte ich mit einfachsten Mitteln in mein Kafka-Cluster schreib
 
 -> Theorie-Teil Spring Cloud Streams - Consumer
 
-## Story 5: Kafka Consumer mit Spring Cloud Streams erstellen
+## Story 7: Kafka Consumer mit Spring Cloud Streams erstellen
 
 Als Entwickler möchte ich mit einfachsten Mitteln aus meinem Kafka-Cluster lesen können.
 
@@ -76,7 +76,7 @@ Als Entwickler möchte ich mit einfachsten Mitteln aus meinem Kafka-Cluster lese
 
 -> Theorie-Teil Unterschiede Spring Cloud Streams vs. Spring Kafka
 
-## Story 6: Kafka Producer mit Spring Kafka erstellen
+## Story 8: Kafka Producer mit Spring Kafka erstellen
 
 Als Entwickler möchte ich mit einfachsten Mitteln in mein Kafka-Cluster schreiben können.
 
@@ -85,7 +85,7 @@ Als Entwickler möchte ich mit einfachsten Mitteln in mein Kafka-Cluster schreib
 - [ ] Producer Konfiguration erstellen
 - [ ] Producer erstellen, welcher einen Kafka-Event in das Topic `ch-open-kafka` schreibt
 
-## Story 7: Kafka Consumer mit Spring Kafka erstellen
+## Story 9: Kafka Consumer mit Spring Kafka erstellen
 
 Als Entwickler möchte ich mit einfachsten Mitteln aus meinem Kafka-Cluster lesen können.
 
