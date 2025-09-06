@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   kafka:
-    image: confluentinc/cp-kafka:7.5.1
+    image: apache/kafka:4.0.0
     hostname: kafka
     container_name: ch-open-workshop_kafka
     ports:
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
 
   kafka-init:
-    image: confluentinc/cp-kafka:7.5.1
+    image: apache/kafka:4.0.0
     depends_on:
       - kafka
     entrypoint: [ '/bin/sh', '-c' ]
@@ -47,7 +47,7 @@ services:
       - kafka
 
   schema-registry:
-    image: confluentinc/cp-schema-registry:7.5.1
+    image: confluentinc/cp-schema-registry:7.9.2
     container_name: ch-open-workshop_schema-registry
     ports:
       - "9191:8081"
