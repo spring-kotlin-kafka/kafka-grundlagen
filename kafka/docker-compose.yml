@@ -9,14 +9,14 @@ services:
       - "9190:9190"       # External Kafka Port (Host)
     environment:
       CLUSTER_ID: L4rE3vsnR1y1qu3AOgIDUg # 16 bytes of a base64-encoded UUID.
-      KAFKA_NODE_ID: # id in the cluster
-      KAFKA_PROCESS_ROLES: # roles of the broker
+      KAFKA_NODE_ID: 1 # id in the cluster
+      KAFKA_PROCESS_ROLES: broker,controller # roles of the broker
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      KAFKA_LISTENERS: # all listener (broker,controller,external) with NAME://listener
-      KAFKA_ADVERTISED_LISTENERS: # all advertised listener (controller,external) with NAME://listener
-      KAFKA_CONTROLLER_QUORUM_VOTERS: # all voters comma separated with id@controller-inside-docker
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: # security map with NAME:SECURITY
+      KAFKA_LISTENERS: PLAINTEXT://kafka:29092,CONTROLLER://kafka:29093,EXTERNAL://:9190 # all listener (broker,controller,external) with NAME://listener
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,EXTERNAL://localhost:9190 # all advertised listener (controller,external) with NAME://listener
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093 # all voters comma separated with id@controller-inside-docker
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT # security map with NAME:SECURITY
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     restart: unless-stopped
 
