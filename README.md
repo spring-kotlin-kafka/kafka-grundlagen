@@ -112,7 +112,7 @@ Als Entwickler möchte ich mit Spring Kafka Nachrichten aus Kafka lesen, **um ei
 - [ ] Consumer-Konfiguration wird erstellt
   - `key-deserializer: org.apache.kafka.common.serialization.StringDeserializer`
   - `value-deserializer: org.apache.kafka.common.serialization.StringDeserializer`
-- [ ] Ein Consumer wird implementiert, der Nachrichten aus dem Topic `ch-open-kafka` liest
+- [ ] Ein Consumer-Bean wird implementiert, das Nachrichten aus dem Topic `ch-open-kafka` liest
 
 ## Bonus Story 1: Zweiten Broker hinzufügen
 
