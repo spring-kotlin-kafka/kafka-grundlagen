@@ -101,7 +101,7 @@ Als Entwickler möchte ich mit Spring Kafka Nachrichten in Kafka schreiben, **um
 - [ ] Producer-Konfiguration wird erstellt
   - `key-deserializer: org.apache.kafka.common.serialization.StringDeserializer`
   - `value-deserializer: org.apache.kafka.common.serialization.StringDeserializer`
-- [ ] Ein Producer wird implementiert, der Events in das Topic `ch-open-kafka` schreibt
+- [ ] Ein Producer-Bean, welches `CommandLineRunner` implementiert, schreibt ein Event in das Topic `ch-open-kafka`
 
 ## Story 9: Kafka Consumer mit Spring Kafka erstellen
 
