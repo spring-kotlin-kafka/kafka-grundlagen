@@ -41,7 +41,7 @@ services:
     ports:
       - "9192:9000"
     environment:
-      KAFKA_BROKERCONNECT: "docker_image:port"
+      KAFKA_BROKERCONNECT: "kafka:29092"
       JVM_OPTS: "-Xms32M -Xmx64M"
     depends_on:
       - kafka
